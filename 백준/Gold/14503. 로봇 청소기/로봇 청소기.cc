@@ -3,35 +3,6 @@
 using namespace std;
 int n, m, graph[55][55], rx, ry, rd, ans;
 int dire[2][4] = { {0, 1, 0, -1}, {-1, 0, 1, 0} };
-void up(int idx, int heap[])
-{
-	if (idx / 2 <= 0) return;
-
-	if (heap[idx / 2] > heap[idx])
-	{
-		int tmp = heap[idx];
-		heap[idx] = heap[idx / 2];
-		heap[idx / 2] = tmp;
-		up(idx / 2, heap);
-	}
-}
-void down(int idx, int heap[], int len)
-{
-	if (idx * 2 > len) return;
-	int child = 0;
-	if (heap[idx * 2] < heap[idx * 2 + 1])
-		child = idx * 2;
-	else
-		child = idx * 2 + 1;
-
-	if (heap[idx] > heap[child])
-	{
-		int tmp = heap[idx];
-		heap[idx] = heap[child];
-		heap[child] = tmp;
-		down(child, heap, len);
-	}
-}
 int dirty(int x, int y, int d)
 {
 	for (int i = 1; i <= 4; i++)
