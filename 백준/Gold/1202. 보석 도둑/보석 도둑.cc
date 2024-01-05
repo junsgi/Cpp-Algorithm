@@ -1,3 +1,12 @@
+/*
+보석은 무게를 기준으로 오름차순 정렬
+가방도 오름차순 정렬
+
+가방에 담을 수 있는 보석을 힙에 모두 삽입 (최대 힙)
+가방보다 무게가 더 무겁다면 while문을 빠져나와 힙의 루트 값을 더한다.
+
+이 과정을 k만큼 반복
+*/
 #pragma warning(disable:4996)
 #include <stdio.h>
 #include <algorithm>
@@ -49,7 +58,7 @@ int main()
 	}
 	for (int i = 0; i < k; i++)
 		scanf("%d", &bag[i]);
-	sort(jewel, jewel + n);
+	sort(jewel, jewel + n, cmp);
 	sort(bag, bag + k);
 	int idx = 0;
 	for (int i = 0; i < k; i++)
