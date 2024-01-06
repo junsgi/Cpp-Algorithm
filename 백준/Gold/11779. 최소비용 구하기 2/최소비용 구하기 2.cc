@@ -19,6 +19,7 @@ void dijkstra()
 		tnode = -1;
 		for (int j = 1; j <= n; j++)
 		{
+			// 바로 j로 가는게 더 비용이 적은지 현재 노드를 경유로해서 가는 것이 비용이 적게 드는지 확인
 			if (!visit[j] && cost[j] > cost[node] + graph[node][j])
 			{
 				cost[j] = cost[node] + graph[node][j];
