@@ -11,8 +11,8 @@ int main()
     for (int i = 0; i < n; i++)
     {
         ans += r * (arr[i] - 96) % M;
-        r *= 31;
+        r = r * 31 % M;
     }
-    printf("%lld", ans);
+    printf("%lld", ans % M);
     return 0;
 }
