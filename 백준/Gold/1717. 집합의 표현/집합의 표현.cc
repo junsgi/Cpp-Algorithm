@@ -1,38 +1,39 @@
-#pragma warning(disable : 6031)
-
-#include <stdio.h>
+#pragma warning(disable:4996)
+#include<stdio.h>
 #define M 1000010
-int p[M];
-int find(int x) // 부모를 찾는다
+using namespace std;
+int check[M];
+int n, m, a, b, c, fb, fc, i;
+int find(int node)
 {
-	if (p[x] == x) return p[x];
-	p[x] = find(p[x]);
-	return p[x];
+	if (check[node] == node)
+		return check[node];
+	check[node] = find(check[node]);
+	return check[node];
 }
 int main()
 {
-
-	int i, j, a, b, n, m, k, x, y;
 	scanf("%d%d", &n, &m);
-	for (i = 1; i <= n; i++) p[i] = i;
-	for (i = 1; i <= m; i++)
+	for (i = 1; i <= n; i++) check[i] = i;
+	for (i = 0; i < m; i++)
 	{
-		scanf("%d%d%d", &k, &a, &b);
-		if (k == 0)
+		scanf("%d%d%d", &a, &b, &c);
+		if (a == 0)
 		{
-			x = find(a);
-			y = find(b);
-			if (x != y)  // 다른 집합이면 합쳐준다
-				p[y] = x;
+			fb = find(b);
+			fc = find(c);
+			if (b < c)
+				check[fc] = fb;
+			else
+				check[fb] = fc;
 		}
 		else
 		{
-			if (find(a) == find(b)) // 같은 집합이면 yes,아니면 no 출력
+			if (find(b) == find(c))
 				printf("YES\n");
 			else
 				printf("NO\n");
 		}
-
 	}
 	return 0;
 }
