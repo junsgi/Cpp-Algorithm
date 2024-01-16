@@ -8,6 +8,7 @@ int find(int node)
 {
 	if (check[node] == node)
 		return check[node];
+	// 경로 압축
 	check[node] = find(check[node]);
 	return check[node];
 }
