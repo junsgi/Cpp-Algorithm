@@ -31,14 +31,10 @@ int main()
 			scanf("%d", &a);
 			if (a == 1) // 연결되어 있다면
 			{
-				MAX = MAX < i ? i : MAX; // 연결되어 있는 노드 중 가장 큰 값을 구한다.
-				MAX = MAX < j ? j : MAX;
-
 				int fx = find(i);
 				int fy = find(j);
 				if (fx != fy)
 					Union(fx, fy);
-
 			}
 		}
 	}
