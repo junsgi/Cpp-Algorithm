@@ -1,5 +1,5 @@
 /*
-나랑 원수 사이의 친구들끼리는 서로 친한 친구임
+내 원수들끼리는 서로 친한 친구임
 */
 #pragma warning(disable:4996)
 #include<stdio.h>
