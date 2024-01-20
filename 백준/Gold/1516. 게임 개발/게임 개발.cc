@@ -67,6 +67,7 @@ int main()
 		for (int i = 0; i < (int)graph[node].size(); i++)
 		{
 			if (edge[graph[node][i]] == 0) continue;
+			// 다음 노드를 짓는 비용과 현재 노드까지의 비용 + 다음 노드 짓는데 드는 비용을 비교
 			ans[graph[node][i]] = max(ans[graph[node][i]], ans[node] + cost[graph[node][i]]);
 			if (--edge[graph[node][i]] == 0)
 			{
