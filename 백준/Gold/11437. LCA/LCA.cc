@@ -4,7 +4,7 @@
 #include<string>
 #define MAX 100'001
 using namespace std;
-int n, depth[MAX];
+int n, depth[MAX], pa[MAX];
 int max(int a, int b) { return a < b ? b : a; }
 int min(int a, int b) { return a > b ? b : a; }
 vector<int> graph[MAX];
@@ -14,6 +14,7 @@ void DFS(int node)
 	{
 		if (depth[graph[node][i]] != -1) continue;
 		depth[graph[node][i]] = depth[node] + 1;
+		pa[graph[node][i]] = node;
 		DFS(graph[node][i]);
 	}
 }
@@ -39,46 +40,14 @@ int main()
 		while (depth[n1] != depth[n2])
 		{
 			if (depth[n1] < depth[n2])
-			{
-				for (int j = 0; j < (int)graph[n2].size(); j++)
-				{
-					if (depth[graph[n2][j]] < depth[n2])
-					{
-						n2 = graph[n2][j];
-						break;
-					}
-				}
-			}
+				n2 = pa[n2];
 			else
-			{
-				for (int j = 0; j < (int)graph[n1].size(); j++)
-				{
-					if (depth[graph[n1][j]] < depth[n1])
-					{
-						n1 = graph[n1][j];
-						break;
-					}
-				}
-			}
+				n1 = pa[n1];
 		}
 		while (n1 != n2)
 		{
-			for (int j = 0; j < (int)graph[n1].size(); j++)
-			{
-				if (depth[graph[n1][j]] < depth[n1])
-				{
-					n1 = graph[n1][j];
-					break;
-				}
-			}
-			for (int j = 0; j < (int)graph[n2].size(); j++)
-			{
-				if (depth[graph[n2][j]] < depth[n2])
-				{
-					n2 = graph[n2][j];
-					break;
-				}
-			}
+			n1 = pa[n1];
+			n2 = pa[n2];
 		}
 		printf("%d\n", n1);
 	}
