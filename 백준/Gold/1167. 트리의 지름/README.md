@@ -1,4 +1,4 @@
-# [Gold II] 트리의 지름 - 1167 
+# [Gold II] 트리의 지름 - 1167 (+설명)
 
 [문제 링크](https://www.acmicpc.net/problem/1167) 
 
