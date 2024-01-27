@@ -8,6 +8,12 @@ int n, t, root, ed, ec,ans, visit[MAX];
 int max(int a, int b) { return a < b ? b : a; }
 int min(int a, int b) { return a > b ? b : a; }
 vector<pair<int, int>> graph[MAX];
+/*
+트리의 지름 구하기
+1. 아무 노드 선택
+2. 가장 먼 거리에 있는 노드 선택 (DFS)
+3. 선택한 노드에서 다시 DFS 탐색하여 지름을 구함
+*/
 void DFS(int node, int cost, int chk)
 {
 	if (cost > ec)
