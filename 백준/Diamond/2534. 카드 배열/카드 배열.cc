@@ -64,7 +64,7 @@ int main()
 			up(len);
 		}
 	}
-	number = n - k -1;
+	number = n - k - 1;
 	while (len)
 	{
 		int node = heap[1];
