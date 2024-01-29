@@ -1,3 +1,7 @@
+/*
+1. 가장 큰 가중치와 두 번째로 큰 가중치를 구하여 정답을 갱신
+2. 부모는 가장 큰 가중치만 사용하여 계산한다.
+*/
 #pragma warning(disable:4996)
 #include<stdio.h>
 #include<vector>
