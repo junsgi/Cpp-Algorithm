@@ -40,5 +40,5 @@ int main()
 	{
 		if (freq[i] == MAX) printf("%d ", i);
 	}
-	return 0;
+	return 1;
 }
