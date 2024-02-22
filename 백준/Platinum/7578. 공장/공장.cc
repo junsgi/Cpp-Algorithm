@@ -12,7 +12,7 @@ int insert(int left, int right, int idx, int value)
 {
 	if (value < left || right < value) return seg[idx];
 	if (left == right)
-		return seg[idx] += 1;
+		return seg[idx] = 1;
 	int mid = (left + right) / 2;
 	return seg[idx] = insert(left, mid, idx * 2, value) + insert(mid + 1, right, idx * 2 + 1, value);
 
