@@ -1,3 +1,8 @@
+/*
+순회를 총 V - 1번하면 최단거리가 구해짐
+마지막으로 한 번 순회했을 때 값이 달라진다면 음수 사이클 존재
+
+*/
 #pragma warning(disable:4996)
 #include<stdio.h>
 #include<algorithm>
