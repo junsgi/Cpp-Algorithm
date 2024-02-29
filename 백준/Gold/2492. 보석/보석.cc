@@ -30,8 +30,8 @@ void sweeping()
 			if (sum > ans)
 			{
 				ans = sum;
-				ax = min(x1, n - k);
-				ay = max(y2, k);
+				ax = min(x1, n - k); // x좌표에서 k만큼 내려갔을 때 범위를 벗어난다면 n - k로 대입
+				ay = max(y2, k); //  y좌표에서 왼쪽으로 k만큼 이동했을 때 범위를 벗어난다면 k로 대입
 			}
 		}
 	}
