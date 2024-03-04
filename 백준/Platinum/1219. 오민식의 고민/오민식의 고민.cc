@@ -36,7 +36,7 @@ int main()
 				if (i >= n - 1)
 				{
 					visit[arr[j].ed] = -M;
-					if (arr[j].ed == ed)
+					if (arr[j].ed == ed) // 도착지점도 양수 사이클이라면 종료
 					{
 						status = 1;
 						break;
