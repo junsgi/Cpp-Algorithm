@@ -14,6 +14,7 @@ queue<pii> que;
 vector<int> arr;
 int BFS(int s, int e)
 {
+	// 시작 지점의 높이가 범위에 속하지 않는다면 return 0
 	if (!(s <= height[sx][sy] && height[sx][sy] <= e))return 0;
 	fill(&visit[0][0], &visit[49][49], 0);
 	que = queue<pii>();
