@@ -15,8 +15,8 @@ int main()
 
 	for (int i = 1; i <= n; i++)
 	{
-		while (!left.empty() && arr[i] >= arr[left.top()]) left.pop();
-		cnt[i] += (int)left.size();
+		while (!left.empty() && arr[i] >= arr[left.top()]) left.pop(); // 현재 높이보다 낮은 건물은 모두 pop
+		cnt[i] += (int)left.size(); // 스택의 길이 == 현재 위치 기준 왼쪽 방향으로 바라봤을 때 볼 수 있는 건물의 개수
 		if (!left.empty() && dist[i] > abs(i - left.top()) || !left.empty() && dist[i] == abs(i - left.top()) && check[i] > left.top())
 		{
 			check[i] = left.top();
