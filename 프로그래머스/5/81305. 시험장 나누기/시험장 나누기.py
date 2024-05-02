@@ -57,13 +57,13 @@ def solution(k, num, links):
     le, ri = max(num), 10 ** 8
     mid = 0
         
-    while le < ri:
+    while le <= ri:
         mid = (le + ri) // 2
         group = 1
         post(root, k, mid)
         if group <= k:
             answer = mid
-            ri = mid
+            ri = mid - 1
         else:
             le = mid + 1
     return answer
