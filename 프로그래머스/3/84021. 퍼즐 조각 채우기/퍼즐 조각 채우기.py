@@ -28,8 +28,7 @@ def BFS(i, j, graph, visit, flag, cnt):
             else:
                 result[0] += "0"
         result[0] += "."
-    # if flag == 0:
-    #     return result[0].strip(".")
+        
     for j in range(maxY, minY - 1, -1):
         for i in range(minX, maxX + 1):
             if visit[i][j] == cnt:
@@ -42,6 +41,7 @@ def BFS(i, j, graph, visit, flag, cnt):
     result[3] = result[1][::-1]
     result = list(map(lambda x : x.strip("."), result))
     return result
+
 def solution(game_board, table):
     answer = 0
     N, M = len(table), len(table[0])
@@ -50,7 +50,6 @@ def solution(game_board, table):
     blocks = []
     blanks = []
     check = defaultdict(int)
-    dup = set()
     cnt = 1
     for b in range(2):
         for i in range(N):
