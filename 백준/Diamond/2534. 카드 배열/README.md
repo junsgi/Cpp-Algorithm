@@ -1,4 +1,4 @@
-# [Diamond V] 카드 배열 - 2534 
+ # [Diamond V] 카드 배열 - 2534 
 
 [문제 링크](https://www.acmicpc.net/problem/2534) 
 
